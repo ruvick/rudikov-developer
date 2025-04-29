@@ -1,0 +1,176 @@
+.header {
+	padding: rem(41) 0;
+
+	// .header__inner
+	&__inner {
+		display: flex;
+		align-items: center;
+		gap: rem(25);
+	}
+
+	// .header__logo
+	&__logo {
+		width: rem(100);
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 43, 15);
+		flex: 1 1 auto;
+	}
+
+	// .header__menu
+	&__menu {
+		display: flex;
+		justify-content: flex-end;
+		flex: 1 1 auto;
+	}
+
+	// .header__contacts
+	&__contacts {
+	}
+}
+
+.menu {
+
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 52, 10);
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+		font-family: "DM+Sans", sans-serif;
+		@include adaptiveValue("font-size", 20, 14);
+		line-height: math.div(26, 20);
+		font-weight: 500;
+		color: $mainColor;
+		transition: $mainTransition;
+		@media (any-hover: hover){
+			 &:hover { 
+			  color: $mainBlueDarkColor;
+			} 
+		}
+	}
+}
+
+.contacts-header {
+	// .contacts-header__social
+	&__social {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 10, 5);
+	}
+}
+
+.socila-header {
+	// .socila-header__icon
+	&__icon {
+		width: rem(30);
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+
+//====================================================================================================
+
+// Анимация header scroll
+// .header {
+// 	@media (min-width: 1025px) {
+// 		transform: translateY(0); 
+// 		position: fixed;
+// 		top: 0;
+// 		left: 0;
+// 		width: 100%;
+// 		transition: all 0.4s ease 0.1s;
+// 	}
+// 	&._header-scroll {
+// 		transform: translateY(-200%);
+// 		width: 100%;
+// 		background-color: #fff;
+// 		box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
+// 	}
+// 	&._header-show {
+// 		top: 0%;
+// 		transform: translateY(0);
+// 	}
+// }
+
+// // Убираем скачок при блокировке 
+// .lock .header {
+// 	@media (min-width:em(1025)){
+// 		left: auto;
+// 		right: rem(3.3);
+// 	}
+// }
+//========================================================================================================================================================
+
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		flex: 0 0 rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+

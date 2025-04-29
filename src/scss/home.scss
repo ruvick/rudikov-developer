@@ -1,0 +1,149 @@
+.greetings {
+
+	// .greetings__container
+	&__container {
+		max-width: rem(1200);
+	}
+
+	// .greetings__inner
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiveValue("gap", 25, 15);
+	}
+
+	// .greetings__descp
+	&__descp {
+		max-width: rem(636);
+		width: 100%;
+		h1 {
+			@include adaptiveValue("font-size", 58, 26);
+			font-weight: 700;
+			line-height: math.div(70, 58);
+			color: $mainBlueDarkColor;
+			span {
+				background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+
+	// .greetings__img-ibg
+	&__img-ibg {
+		flex: 0 0 rem(350);
+		width: rem(350);
+    height: rem(350);
+		background-color: grey;
+		overflow: hidden;
+		border-radius: 50%;
+		&::before{
+			content:''; 
+			position: absolute;
+			width: 360px;
+			height: 360px;
+			background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+			background-clip: padding-box;
+		}
+	}
+	img {
+		scale: 0.97;
+    border-radius: 50%;
+	}
+}
+
+.about {
+
+	// .about__container
+	&__container {
+	}
+
+	// .about__title
+	&__title {
+		&:not(:last-child){
+			margin-bottom: rem(48);
+		}
+	}
+
+	// .about__subtitle
+	&__subtitle {
+		max-width: rem(800);
+		@include adaptiveValue("font-size", 18, 14);
+		font-weight: 500;
+		line-height: math.div(26, 18);
+		text-align: center;
+		margin: 0px auto;
+	}
+}
+
+.stack {
+
+	// .stack__container
+	&__container {
+	}
+
+	// .stack__title
+	&__title {
+		&:not(:last-child){
+			margin-bottom: rem(30);
+		}
+	}
+
+	// .stack__subtitle
+	&__subtitle {
+		@include adaptiveValue("font-size", 32, 18);
+		font-weight: 400;
+		line-height: math.div(26, 32);
+		text-align: center;
+		&:not(:last-child){
+			margin-bottom: rem(108);
+		}
+	}
+
+	// .stack__inner
+	&__inner {
+		display: grid; 
+		grid-template-columns: repeat(auto-fill, minmax(rem(90), 1fr)); 
+		@include adaptiveValue("gap", 103, 15);
+	}
+
+	// .stack__item
+	&__item {
+	}
+}
+
+.item-stack {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+.projects {
+
+	// .projects__container
+	&__container {
+	}
+
+	// .projects__title
+	&__title {
+		&:not(:last-child){
+			margin-bottom: rem(65);
+		}
+	}
+
+	// .projects__inner
+	&__inner {
+		display: grid; 
+		grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr)); 
+		@include adaptiveValue("gap", 45, 15);
+	}
+}
+
+
