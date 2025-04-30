@@ -12,6 +12,212 @@ h2 {
 }
 //========================================================================================================================================================
 
+.logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	white-space: nowrap;
+	// .logo__title
+	&__title {
+		@include adaptiveValue("font-size", 20, 16);
+		background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		&:not(:last-child){
+			margin-bottom: rem(2);
+		}
+	}
+
+	// .logo__subtitle
+	&__subtitle {
+		@include adaptiveValue("font-size", 14, 8);
+		transition: all 0.3s ease 0s;
+		background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	@media (any-hover: hover){
+		&:hover { 
+			&__subtitle {
+				opacity: 0.8;
+			}
+		} 
+	}
+}
+
+.menu {
+
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 52, 10);
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+		font-family: "DM+Sans", sans-serif;
+		@include adaptiveValue("font-size", 20, 14);
+		line-height: math.div(26, 20);
+		font-weight: 500;
+		color: $mainColor;
+		transition: $mainTransition;
+		@media (any-hover: hover){
+			 &:hover { 
+			  color: $mainBlueDarkColor;
+			} 
+		}
+	}
+}
+
+.item-stack {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+.card-projects {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	box-shadow: 0 0 rem(65) rgba(0, 0, 0, 0.3);
+	border-radius: rem(26);
+	overflow: hidden;
+	// .card-projects__img
+	&__img-ibg {
+		padding-bottom: 70%;
+		overflow: hidden;
+		img {
+			transition: $mainTransition;
+		}
+	}
+
+	// .card-projects__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: rem(28);
+	}
+
+	// .card-projects__title
+	&__title {
+		@include adaptiveValue("font-size", 28, 18);
+		font-weight: 500;
+		line-height: math.div(26, 28);
+		color: $mainDarkColor;
+		text-align: center;
+		flex: 1 1 auto;
+		&:not(:last-child){
+			margin-bottom: rem(16);
+		}
+	}
+
+	// .card-projects__descp
+	&__descp {
+		@include adaptiveValue("font-size", 18, 14);
+		font-weight: 300;
+		line-height: math.div(26, 18);
+		color: $mainColor;
+		&:not(:last-child){
+			margin-bottom: rem(12);
+		}
+	}
+
+	// .card-projects__stack
+	&__stack {
+		@include adaptiveValue("font-size", 14, 12);
+		line-height: math.div(26, 14);
+		font-weight: 300;
+		color: $mainBlueDarkColor;
+		span {
+			@include adaptiveValue("font-size", 16, 14);
+			font-weight: 400;
+			line-height: math.div(26, 16);
+			color: $mainBlueDarkColor;
+		}
+		&:not(:last-child){
+			margin-bottom: rem(20);
+		}
+	}
+
+	// .card-projects__links
+	&__links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@include adaptiveValue("gap", 15, 5);
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 10, 5);
+		@include adaptiveValue("font-size", 16, 12);
+		font-weight: 400;
+		line-height: math.div(26, 13);
+		color: $mainDarkColor;
+		span {
+			position: relative;
+			&::before{
+				content:''; 
+				position: absolute;
+				bottom: rem(9);
+				left: 0;
+				width: 100%;
+				height: rem(1);
+				background-color: $mainDarkColor;
+				transition: $mainTransition;
+			}
+		}
+		svg {
+			@include adaptiveValue("width", 20, 15);
+			@include adaptiveValue("height", 20, 15);
+			border: rem(1) solid #000;
+			transition: $mainTransition;
+		}
+		@media (any-hover: hover){
+			 &:hover { 
+				span {
+					&::before {
+						opacity: 0;
+					}
+				}
+			 svg {
+				scale: 1.05;
+			 } 
+			} 
+		}
+	}
+	@media (any-hover: hover){
+		&:hover { 
+		 img {
+			 scale: 1.05;
+		 }
+	 }
+ }
+}
+
+//========================================================================================================================================================
+
 // Свойсьво Blur 
 .backdrop-filter {
 	background: rgba(255, 255, 255, 0.9);

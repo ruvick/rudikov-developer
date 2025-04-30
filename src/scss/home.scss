@@ -73,7 +73,7 @@
 		font-weight: 500;
 		line-height: math.div(26, 18);
 		text-align: center;
-		margin: 0px auto;
+		margin: 0 auto;
 	}
 }
 
@@ -113,18 +113,6 @@
 	}
 }
 
-.item-stack {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-	}
-}
-
 .projects {
 
 	// .projects__container
@@ -143,6 +131,10 @@
 		display: grid; 
 		grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr)); 
 		@include adaptiveValue("gap", 45, 15);
+	}
+
+	// .projects__card
+	&__card {
 	}
 }
 

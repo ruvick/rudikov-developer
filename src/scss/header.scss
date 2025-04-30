@@ -5,13 +5,11 @@
 	&__inner {
 		display: flex;
 		align-items: center;
-		gap: rem(25);
+		@include adaptiveValue("gap", 35, 15);
 	}
 
 	// .header__logo
 	&__logo {
-		width: rem(100);
-		overflow: hidden;
 		img {
 			width: 100%;
 			height: 100%;
@@ -36,39 +34,6 @@
 
 	// .header__contacts
 	&__contacts {
-	}
-}
-
-.menu {
-
-	// .menu__body
-	&__body {
-	}
-
-	// .menu__list
-	&__list {
-		display: flex;
-		align-items: center;
-		@include adaptiveValue("gap", 52, 10);
-	}
-
-	// .menu__item
-	&__item {
-	}
-
-	// .menu__link
-	&__link {
-		font-family: "DM+Sans", sans-serif;
-		@include adaptiveValue("font-size", 20, 14);
-		line-height: math.div(26, 20);
-		font-weight: 500;
-		color: $mainColor;
-		transition: $mainTransition;
-		@media (any-hover: hover){
-			 &:hover { 
-			  color: $mainBlueDarkColor;
-			} 
-		}
 	}
 }
 
