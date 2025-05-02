@@ -20,7 +20,7 @@ h2 {
 	white-space: nowrap;
 	// .logo__title
 	&__title {
-		@include adaptiveValue("font-size", 20, 16);
+		@include adaptiveValue("font-size", 20, 18);
 		background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -31,7 +31,7 @@ h2 {
 
 	// .logo__subtitle
 	&__subtitle {
-		@include adaptiveValue("font-size", 14, 8);
+		@include adaptiveValue("font-size", 14, 12);
 		transition: all 0.3s ease 0s;
 		background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
 		-webkit-background-clip: text;
