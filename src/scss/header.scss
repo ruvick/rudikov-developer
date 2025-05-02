@@ -1,11 +1,12 @@
 .header {
-	padding: rem(41) 0;
+	@include adaptiveValue("padding-top", 41, 15);
+	@include adaptiveValue("padding-bottom", 41, 15);
 
 	// .header__inner
 	&__inner {
 		display: flex;
 		align-items: center;
-		@include adaptiveValue("gap", 35, 15);
+		@include adaptiveValue("gap", 35, 10);
 	}
 
 	// .header__logo
@@ -15,12 +16,14 @@
 			height: 100%;
 			object-fit: contain;
 		}
+		z-index: 15;
 	}
 
 	// .header__body
 	&__body {
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 		@include adaptiveValue("gap", 43, 15);
 		flex: 1 1 auto;
 	}
@@ -30,8 +33,45 @@
 		display: flex;
 		justify-content: flex-end;
 		flex: 1 1 auto;
+		@media (max-width: em(768)){
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			background-color: #fff;
+			transition: $mainTransition;
+			transform: translateX(-100%);
+			visibility: hidden;
+			// box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
+			.menu-open & {
+				transform: translateX(0%);
+				visibility: visible;
+			}
+			.menu__body {
+				width: 100%;
+				padding: rem(0) rem(20) rem(35) rem(20);
+				@include adaptiveValue("padding-top", 155, 100);
+			}
+			.menu__list {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: rem(10);
+			}
+			.menu__item {
+				display: flex;
+				width: 100%;
+			}
+			.menu__link {
+				font-size: rem(23);
+				width: 100%;
+			}
+		}
 	}
-
+	&__contacts {
+		z-index: 15;
+	}
 }
 
 .contacts-header {
@@ -46,8 +86,8 @@
 .socila-header {
 	// .socila-header__icon
 	&__icon {
-		width: rem(30);
-		height: rem(30);
+		@include adaptiveValue("width", 30, 25);
+		@include adaptiveValue("height", 30, 25);
 		overflow: hidden;
 		img {
 			width: 100%;
@@ -106,29 +146,29 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		flex: 0 0 rem(30);
+		flex: 0 0 rem(23);
 		height: rem(18);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 15;
 		span,
 		&::before,
 		&::after {
 			content: "";
 			transition: all 0.3s ease 0s;
-			left: 0px;
+			left: 0;
 			position: absolute;
 			width: 100%;
-			height: 2px;
-			background-color: #fff;
+			height: rem(3);
+			background-color: $mainBlueDarkColor;
 		}
 		&::before {
-			top: 0px;
+			top: 0;
 		}
 		&::after {
-			bottom: 0px;
+			bottom: 0;
 		}
 		span {
-			top: calc(50% - 1px);
+			top: calc(50% - rem(1));
 		}
 		.menu-open & {
 			span {
@@ -136,13 +176,12 @@
 			}
 			&::before {
 				transform: rotate(-45deg);
-				top: calc(50% - 1px);
+				top: calc(50% - rem(2.5));
 			}
 			&::after {
 				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
+				bottom: calc(50% - rem(1));
 			}
 		}
 	}
 }
-

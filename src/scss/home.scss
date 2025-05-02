@@ -11,12 +11,18 @@
 		justify-content: space-between;
 		align-items: center;
 		@include adaptiveValue("gap", 25, 15);
+		@media (max-width: em(768)){
+			flex-direction: column-reverse;
+		}
 	}
 
 	// .greetings__descp
 	&__descp {
 		max-width: rem(636);
 		width: 100%;
+		@media (max-width: em(768)){
+			max-width: max-content;
+		}
 		h1 {
 			@include adaptiveValue("font-size", 58, 26);
 			font-weight: 700;

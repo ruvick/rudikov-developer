@@ -26,6 +26,25 @@
 		}
 	}
 
+	&__logo {
+		.logo__title {
+			@media (max-width: em(768)){
+				font-size: rem(23);
+			}
+			@media (max-width: em(576)){
+				font-size: rem(20);
+			}
+		}
+		.logo__subtitle {
+			@media (max-width: em(768)){
+				font-size: rem(16);
+			}
+			@media (max-width: em(576)){
+				font-size: rem(14);
+			}
+		}
+	}
+
 	// .top-footer__body
 	&__body {
 		display: flex;
