@@ -131,11 +131,35 @@
 		display: grid; 
 		grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr)); 
 		@include adaptiveValue("gap", 45, 15);
+		&:not(:last-child){
+			@include adaptiveValue("margin-bottom", 60, 20);
+		}
 	}
 
 	// .projects__card
 	&__card {
 	}
+
+		// .projects__inner-link
+		&__inner-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		// .projects__link
+		&__link {
+			@include adaptiveValue("font-size", 20, 16);
+			font-weight: 400;
+			line-height: math.div(26, 20);
+			color: $mainColor;
+			transition: $mainTransition;
+			@media (any-hover: hover){
+				 &:hover { 
+				  color: $mainBlueDarkColor;
+				} 
+			}
+		}
 }
 
 

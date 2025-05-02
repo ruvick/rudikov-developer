@@ -191,7 +191,6 @@ h2 {
 		svg {
 			@include adaptiveValue("width", 20, 15);
 			@include adaptiveValue("height", 20, 15);
-			border: rem(1) solid #000;
 			transition: $mainTransition;
 		}
 		@media (any-hover: hover){
@@ -201,9 +200,6 @@ h2 {
 						opacity: 0;
 					}
 				}
-			 svg {
-				scale: 1.05;
-			 } 
 			} 
 		}
 	}
