@@ -49,10 +49,6 @@ h2 {
 
 .menu {
 
-	// .menu__body
-	&__body {
-	}
-
 	// .menu__list
 	&__list {
 		display: flex;
@@ -60,10 +56,6 @@ h2 {
 		justify-content: flex-end;
 		flex-wrap: wrap;
 		@include adaptiveValue("column-gap", 52, 10);
-	}
-
-	// .menu__item
-	&__item {
 	}
 
 	// .menu__link
@@ -211,7 +203,6 @@ h2 {
 	 }
  }
 }
-
 //========================================================================================================================================================
 
 // Свойсьво Blur 

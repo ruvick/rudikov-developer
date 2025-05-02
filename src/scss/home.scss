@@ -55,10 +55,6 @@
 
 .about {
 
-	// .about__container
-	&__container {
-	}
-
 	// .about__title
 	&__title {
 		&:not(:last-child){
@@ -78,10 +74,6 @@
 }
 
 .stack {
-
-	// .stack__container
-	&__container {
-	}
 
 	// .stack__title
 	&__title {
@@ -107,17 +99,9 @@
 		grid-template-columns: repeat(auto-fill, minmax(rem(90), 1fr)); 
 		@include adaptiveValue("gap", 103, 15);
 	}
-
-	// .stack__item
-	&__item {
-	}
 }
 
 .projects {
-
-	// .projects__container
-	&__container {
-	}
 
 	// .projects__title
 	&__title {
@@ -134,10 +118,6 @@
 		&:not(:last-child){
 			@include adaptiveValue("margin-bottom", 60, 20);
 		}
-	}
-
-	// .projects__card
-	&__card {
 	}
 
 		// .projects__inner-link
