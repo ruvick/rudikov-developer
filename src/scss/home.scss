@@ -11,7 +11,7 @@
 		justify-content: space-between;
 		align-items: center;
 		@include adaptiveValue("gap", 25, 15);
-		@media (max-width: em(768)){
+		@media (max-width: em(991)){
 			flex-direction: column-reverse;
 		}
 	}
@@ -22,6 +22,7 @@
 		width: 100%;
 		@media (max-width: em(768)){
 			max-width: max-content;
+			text-align: center;
 		}
 		h1 {
 			@include adaptiveValue("font-size", 58, 26);
@@ -38,9 +39,8 @@
 
 	// .greetings__img-ibg
 	&__img-ibg {
-		flex: 0 0 rem(350);
-		width: rem(350);
-    height: rem(350);
+		@include adaptiveValue("width", 350, 280);
+		@include adaptiveValue("height", 350, 280);
 		background-color: grey;
 		overflow: hidden;
 		border-radius: 50%;
@@ -66,6 +66,16 @@
 		&:not(:last-child){
 			margin-bottom: rem(48);
 		}
+		@media (max-width: em(768)){
+			&:not(:last-child){
+				margin-bottom: rem(35);
+			} 
+		}
+		@media (max-width: em(576)){
+			&:not(:last-child){
+				margin-bottom: rem(25);
+			}
+		}
 	}
 
 	// .about__subtitle
@@ -86,6 +96,11 @@
 		&:not(:last-child){
 			margin-bottom: rem(30);
 		}
+		@media (max-width: em(768)){
+			&:not(:last-child){
+				margin-bottom: rem(25);
+			}
+		}
 	}
 
 	// .stack__subtitle
@@ -97,6 +112,16 @@
 		&:not(:last-child){
 			margin-bottom: rem(108);
 		}
+		@media (max-width: em(768)){
+			&:not(:last-child){
+				margin-bottom: rem(65);
+			}
+		}
+		@media (max-width: em(576)){
+			&:not(:last-child){
+				margin-bottom: rem(35);
+			}
+		}
 	}
 
 	// .stack__inner
@@ -104,6 +129,15 @@
 		display: grid; 
 		grid-template-columns: repeat(auto-fill, minmax(rem(90), 1fr)); 
 		@include adaptiveValue("gap", 103, 15);
+	}
+
+	&__item {
+		@media (max-width: em(768)){
+			 width: 80%; 
+		}
+		@media (max-width: em(576)){
+			 width: 60%; 
+		}
 	}
 }
 
@@ -114,6 +148,16 @@
 		&:not(:last-child){
 			margin-bottom: rem(65);
 		}
+		@media (max-width: em(768)){
+			&:not(:last-child){
+				margin-bottom: rem(35);
+			}
+		}
+		@media (max-width: em(576)){
+			&:not(:last-child){
+				margin-bottom: rem(25);
+			}
+		}
 	}
 
 	// .projects__inner
@@ -121,6 +165,9 @@
 		display: grid; 
 		grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr)); 
 		@include adaptiveValue("gap", 45, 15);
+		@media (max-width: em(515)){
+			grid-template-columns: 1fr;
+		}
 		&:not(:last-child){
 			@include adaptiveValue("margin-bottom", 60, 20);
 		}

@@ -159,22 +159,22 @@ body {
 
 	// .page__greetings
 	&__greetings {
-		@include adaptiveValue("padding-top", 130, 35);
-		@include adaptiveValue("padding-bottom", 85, 35);
+		@include adaptiveValue("padding-top", 130, 30);
+		@include adaptiveValue("padding-bottom", 85, 30);
 	}
 	// .page__about
 	&__about {
-		@include adaptiveValue("padding-top", 85, 35);
-		@include adaptiveValue("padding-bottom", 80, 35);
+		@include adaptiveValue("padding-top", 85, 30);
+		@include adaptiveValue("padding-bottom", 80, 30);
 	}
 	// .page__stack
 	&__stack {
-		@include adaptiveValue("padding-top", 80, 35);
-		@include adaptiveValue("padding-bottom", 80, 35);
+		@include adaptiveValue("padding-top", 80, 30);
+		@include adaptiveValue("padding-bottom", 80, 30);
 	}
 	// .page__projects
 	&__projects {
-		@include adaptiveValue("padding-top", 80, 35);
-		@include adaptiveValue("padding-bottom", 80, 35);
+		@include adaptiveValue("padding-top", 80, 30);
+		@include adaptiveValue("padding-bottom", 80, 30);
 	}
 }
