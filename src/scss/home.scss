@@ -19,7 +19,6 @@
 	// .greetings__descp
 	&__descp {
 		max-width: rem(636);
-		width: 100%;
 		@media (max-width: em(768)){
 			max-width: max-content;
 			text-align: center;
@@ -39,18 +38,26 @@
 
 	// .greetings__img-ibg
 	&__img-ibg {
-		@include adaptiveValue("width", 350, 280);
-		@include adaptiveValue("height", 350, 280);
+		@include adaptiveValue("width", 400, 280);
+		@include adaptiveValue("height", 400, 280);
 		background-color: grey;
 		overflow: hidden;
 		border-radius: 50%;
+		@media (max-width: em(1050)){
+			@include adaptiveValue("width", 380, 280);
+			@include adaptiveValue("height", 380, 280);
+		}
 		&::before{
 			content:''; 
 			position: absolute;
-			width: 360px;
-			height: 360px;
+			width: 410px;
+			height: 410px;
 			background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
 			background-clip: padding-box;
+			@media (max-width: em(1050)){
+				width: 390px;
+				height: 390px;
+			}
 		}
 	}
 	img {

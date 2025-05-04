@@ -118,7 +118,18 @@ h2 {
 		line-height: math.div(26, 28);
 		color: $mainDarkColor;
 		text-align: center;
-		flex: 1 1 auto;
+		&:not(:last-child){
+			margin-bottom: rem(8);
+		}
+	}
+
+	&__subtitle {
+		@include adaptiveValue("font-size", 15, 13);
+		line-height: math.div(23, 16);
+		background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: center;
 		&:not(:last-child){
 			margin-bottom: rem(16);
 		}
@@ -126,10 +137,11 @@ h2 {
 
 	// .card-projects__descp
 	&__descp {
-		@include adaptiveValue("font-size", 18, 14);
+		@include adaptiveValue("font-size", 15, 13);
 		font-weight: 300;
 		line-height: math.div(26, 18);
 		color: $mainColor;
+		flex: 1 1 auto;
 		&:not(:last-child){
 			margin-bottom: rem(12);
 		}
