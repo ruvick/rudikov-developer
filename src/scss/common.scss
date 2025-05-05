@@ -100,6 +100,7 @@ h2 {
 		overflow: hidden;
 		img {
 			transition: $mainTransition;
+			object-position: top;
 		}
 	}
 
