@@ -88,12 +88,15 @@
 
 	// .about__subtitle
 	&__subtitle {
-		max-width: rem(800);
-		@include adaptiveValue("font-size", 18, 14);
-		font-weight: 500;
-		line-height: math.div(26, 18);
-		text-align: center;
-		margin: 0 auto;
+		p {
+			@include adaptiveValue("font-size", 20, 16);
+			font-weight: 500;
+			line-height: math.div(26, 18);
+			text-align: justify;
+			&:not(:last-child){
+				margin-bottom: rem(15);
+			}
+		}
 	}
 }
 
