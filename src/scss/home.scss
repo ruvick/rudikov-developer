@@ -171,6 +171,12 @@
 		}
 	}
 
+	&__tabs {
+		&:not(:last-child){
+			margin-bottom: rem(65);
+		}
+	}
+
 	// .projects__inner
 	&__inner {
 		display: grid; 

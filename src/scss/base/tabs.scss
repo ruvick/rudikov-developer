@@ -2,22 +2,33 @@
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 25, 15);
+		@include adaptiveValue("row-gap", 15, 10);
+		&:not(:last-child){
+			margin-bottom: rem(25);
+		}
 	}
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
-		border-radius: rem(5);
+		flex: 0 0 auto;
+		@include adaptiveValue("font-size", 18, 14);
+		padding: 0 rem(15);
+		border-bottom: rem(1) solid #eee;
 		&._tab-active {
-			border: 1px solid #000;
+			background: linear-gradient(90deg, #13B0F5 3%, #E70FAA 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			border-bottom: rem(1) solid #000;
 		}
 	}
 	// .tabs__content
 	&__content {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
+
 	}
 	// .tabs__body
 	&__body {
+		@include adaptiveValue("padding-top", 25, 15);
+		@include adaptiveValue("padding-bottom", 25, 15);
 	}
 }
